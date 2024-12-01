@@ -10,10 +10,20 @@ for line in lines:
     ids1.append(int(split[0]))
     ids2.append(int(split[1]))
 
-ids1.sort()
-ids2.sort()
-total = 0
-for i, id in enumerate(ids1):
-    total += abs(id - ids2[i])
 
-print(total)
+def part1():
+    ids1.sort()
+    ids2.sort()
+    total = 0
+    for i, id in enumerate(ids1):
+        total += abs(id - ids2[i])
+    return total
+
+
+def part2():
+
+    pass
+
+
+print(part1())
+print(part2())
