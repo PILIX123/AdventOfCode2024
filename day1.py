@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 lines: list[str]
 with open("inputs/day1.txt") as f:
     lines = f.readlines()
@@ -21,8 +24,15 @@ def part1():
 
 
 def part2():
-
-    pass
+    total = 0
+    counter1 = defaultdict(int)
+    counter2 = defaultdict(int)
+    for index in range(len(ids1)):
+        counter1[ids1[index]] += 1
+        counter2[ids2[index]] += 1
+    for key, value in counter1.items():
+        total += key*value*counter2.get(key, 0)
+    return total
 
 
 print(part1())
